@@ -1,5 +1,9 @@
 import { Box, Image, Text, Button } from "@chakra-ui/react";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import React from 'react'
+import { useNavigate } from 'react-router-dom';
+
+
 
 // function Homefour() {
 //   const data = [
@@ -112,6 +116,14 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 //   );
 // }
 function Homefour() {
+
+  const navigate = useNavigate(); // Initialize navigate
+
+  // Define the function to handle navigation
+  function handleClick() {
+    navigate('/ask-local'); // Use the route you want to navigate to
+  }
+
   return (
     <Box
       w="85%"
@@ -166,7 +178,10 @@ function Homefour() {
             bg="black"
             rounded="25px"
             p="23px 23px"
-            onClick={() => alert("Chat feature is under development")}
+            onClick={  
+              handleClick
+              //alert("Chat feature is under development")
+            }
           >
             Connect with a Local
           </Button>
