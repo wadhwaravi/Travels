@@ -1,9 +1,8 @@
-// productData.js
-// SouvenirMarketplace.jsx
+//
 import React from "react";
 import { Box, Image, Text, Grid, Button, Flex, Icon } from "@chakra-ui/react";
 import { StarIcon } from "@chakra-ui/icons";
-
+import { Link } from "react-router-dom";
 export const productData = [
   {
     id: 1,
@@ -87,8 +86,10 @@ const SouvenirMarketplace = () => {
                   bg="black"
                   rounded="25px"
                   p="23px 23px"
+                  as={Link}
+                  to={`/marketplace/${product.id}`}
                 >
-                  Add to Cart
+                  View Details
                 </Button>
               </Box>
             </Box>
@@ -101,6 +102,8 @@ const SouvenirMarketplace = () => {
           bg="black"
           rounded="25px"
           p="23px 23px"
+          as={Link}
+          to="/marketplace"
         >
           Browse Marketplace
         </Button>

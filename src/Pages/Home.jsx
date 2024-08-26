@@ -12,6 +12,7 @@ import SafetyRatingsPage from "../Components/Home/SafteyRating";
 import TravelBuddyMatching from "../Components/Home/Travelbuddy";
 import { ChakraProvider } from "@chakra-ui/react";
 import SouvenirMarketplace from "../Components/Home/SouvenirMarketplace";
+import Marketplace from "../Components/MarketPlace/Marketplace";
 const Home = () => {
   return (
     <Box>
