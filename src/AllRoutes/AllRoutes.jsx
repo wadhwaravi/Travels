@@ -15,9 +15,10 @@ function AllRoutes() {
       <Route path="/hotel" element={<Hotel />}></Route>
       <Route path="/marketplace" element={<Marketplace />} />
       <Route path="/marketplace/:id" element={<ProductDetail />} />
-      <Route path="/asklocal" element={<AskLocalPage />} />
-      <Route path="/cityselection" element={<CitySelection />} />
-<Route path="/cart" element={<CartPage/>}/>
+      <Route path="/ask-a-local" element={<Homefour />} />
+      <Route path="/connect-with-local" element={<AskLocalPage />} />
+      <Route path="/city-selection" element={<CitySelection />} />
+      <Route path="/cart" element={<CartPage />} />
     </Routes>
   );
 }
