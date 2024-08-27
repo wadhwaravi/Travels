@@ -1,9 +1,6 @@
 import { Box, Image, Text, Button } from "@chakra-ui/react";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { useNavigate } from 'react-router-dom';
-import React from 'react'
-
-
 
 // function Homefour() {
 //   const data = [
@@ -116,13 +113,7 @@ import React from 'react'
 //   );
 // }
 function Homefour() {
-
-  const navigate = useNavigate(); // Initialize navigate
-
-  // Define the function to handle navigation
-  function handleClick() {
-    navigate('/ask-local'); // Use the route you want to navigate to
-  }
+  const navigate = useNavigate();
 
   return (
     <Box

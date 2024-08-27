@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "../Pages/Home";
 import Hotel from "../Pages/Hotel";
-import AskLocalPage from "../Pages/AskLocalPage";
+import AskLocalPage from "../Components/Home/AskLocalPage";
 import Marketplace from "../Components/MarketPlace/Marketplace";
 import ProductDetail from "../Components/MarketPlace/ProductDetail";
 import CitySelection from "../Components/Home/CitySelection";
