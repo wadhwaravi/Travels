@@ -99,7 +99,7 @@ function SubNav() {
         display="flex"
         alignItems="center"
       >
-        <Link fontSize="md">Ask A locale</Link>
+        <Link to={'/ask-a-local'} fontSize="md">Ask A locale</Link>
         <ForumOutlinedIcon />
       </Box>
       <Box

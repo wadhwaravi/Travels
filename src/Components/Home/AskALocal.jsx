@@ -1,5 +1,6 @@
 import { Box, Image, Text, Button } from "@chakra-ui/react";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import { useNavigate } from 'react-router-dom';
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 
@@ -178,10 +179,7 @@ function Homefour() {
             bg="black"
             rounded="25px"
             p="23px 23px"
-            onClick={  
-              handleClick
-              //alert("Chat feature is under development")
-            }
+            onClick={() => navigate('/city-selection')}
           >
             Connect with a Local
           </Button>
