@@ -2,7 +2,6 @@ import { Box, Image, Text, Button } from "@chakra-ui/react";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { useNavigate } from 'react-router-dom';
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
 
 
 
