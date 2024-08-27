@@ -6,12 +6,14 @@ import Marketplace from "../Components/MarketPlace/Marketplace";
 import ProductDetail from "../Components/MarketPlace/ProductDetail";
 import CitySelection from "../Components/Home/CitySelection";
 import Homefour from "../Components/Home/AskALocal";
+import TripPlannerForm from "../form/TripPlannerForm";
 
 import CartPage from "../Components/Cart/CartPage";
 function AllRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />}></Route>
+      <Route path="/Trip-planning" element={<TripPlannerForm/>}></Route>
       <Route path="/hotel" element={<Hotel />}></Route>
       <Route path="/marketplace" element={<Marketplace />} />
       <Route path="/marketplace/:id" element={<ProductDetail />} />

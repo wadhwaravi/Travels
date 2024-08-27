@@ -2,7 +2,7 @@ import { Box, Image, Select, Text } from "@chakra-ui/react";
 
 function Footer() {
   return (
-    <Box textAlign="left" bg="#FAF1ED" p="30px 0px">
+    <Box textAlign="left" bg="#FAF1ED" p="30px 0px" position={"relative"} left={"0px"} right={"0px"} bottom={"0px"} mt={"150px"}>
       <Box
         w="85%"
         m="auto"

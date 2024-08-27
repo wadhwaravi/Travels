@@ -1,5 +1,5 @@
 import { SearchIcon } from "@chakra-ui/icons";
-import { Box, Input, Button, Text } from "@chakra-ui/react";
+import { Box, Input, Button, Text ,Link} from "@chakra-ui/react";
 
 function Homeone() {
   return (
@@ -52,7 +52,7 @@ function Homeone() {
           rounded="25px"
           p="23px 23px"
         >
-          Start Planning
+          <Link href="Trip-Planning">Start Planning</Link>
         </Button>
       </Box>
     </Box>
