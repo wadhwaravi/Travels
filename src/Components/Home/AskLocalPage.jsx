@@ -22,7 +22,7 @@ function AskLocalPage(){
     const localArea = queryParams.get('place') || "Unknown Location";
     const localName = "Phil Dunphy";
     const handleBackClick = () => {
-      navigate('/CitySelection'); 
+      navigate('/city-selection'); 
     };
   
     // Define your styles as JavaScript objects

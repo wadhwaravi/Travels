@@ -8,7 +8,7 @@ function CitySelection() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (place.trim()) {
-      navigate(`/AskLocalPage?place=${encodeURIComponent(place)}`);
+      navigate(`/connect-with-local?place=${encodeURIComponent(place)}`);
     }
   };
 
