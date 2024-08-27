@@ -1,6 +1,6 @@
 import { ViewIcon } from "@chakra-ui/icons";
 import { Box, Button, Divider, FormControl, FormLabel, Image, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalOverlay, Text, useDisclosure } from "@chakra-ui/react";
-import React from "react";
+import React,{useState} from "react";
 
 function Signin(){
 
@@ -16,6 +16,8 @@ function Signin(){
       window.location.reload();
     }
 
+    const[email,setEmail]=useState('')
+    const[password,setPassword]=useState('') 
 
     return <>
 
@@ -41,13 +43,15 @@ function Signin(){
 
             <FormControl>
                 <FormLabel fontWeight="600" fontSize="md">Email address</FormLabel>
-                <Input outline="none" ref={initialRef} placeholder='Email' type="email" />
+                <Input outline="none" ref={initialRef} placeholder='Email' type="email" 
+                onChange={e=>setEmail(e.target.value)} />
             </FormControl>
 
             <FormControl mt={3}>
                 <FormLabel fontWeight="600" fontSize="md">Password</FormLabel>
                 <Box display="flex" alignItems="center">
-                    <Input outline="none" type="password" placeholder='Password' />
+                    <Input outline="none" type="password" placeholder='Password' 
+                    onChange={e=>setEmail(e.target.value)}  />
                     <ViewIcon ml="-25px" />
                 </Box>
             </FormControl>
@@ -66,7 +70,11 @@ function Signin(){
                 <Divider></Divider>
             </Box>
 
-            <Text mt="20px" textAlign="center" fontSize="md"><u><b>Join</b></u> to unlock the best of Tripadvisor.</Text>
+            <Text mt="20px" textAlign="center" fontSize="md"><u><b>
+              
+              
+              Join
+              </b></u> to unlock the best of Tripadvisor.</Text>
 
             <Text mt="25px" textAlign="center" fontSize="xs">By proceeding, you agree to our <u>Terms of Use</u> and confirm
              you have read our <u>Privacy and Cookie Statement</u>.</Text>

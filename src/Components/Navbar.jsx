@@ -5,6 +5,8 @@ import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import Signin from "./Signin";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 function Navbar() {
   const [isscroll, setisscroll] = useState(false);
@@ -23,6 +25,13 @@ function Navbar() {
   }, []);
 
   const [isAuth, setAuth] = useState(false);
+
+const navigate=useNavigate()
+
+function handleClick(){
+  navigate('/cart')
+}
+
 
   return (
     <Box
@@ -88,12 +97,11 @@ function Navbar() {
               <Signin />
             )}
           </Link>
-          <Link display="flex">
+            <Text fontWeight="500" fontSize="md" as={Link} onClick={handleClick}>
             <ShoppingCartOutlinedIcon />
-            <Text fontWeight="500" fontSize="md">
+
               Basket
             </Text>
-          </Link>
         </Box>
       </Box>
     </Box>
