@@ -1,4 +1,6 @@
 import { ViewIcon } from "@chakra-ui/icons";
+import Signin from "./Signin";
+import { useDisclosure } from "@chakra-ui/react";
 import {
   Box,
   Button,
@@ -13,11 +15,29 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React, { useRef } from "react";
+function ParentComponent() {
+  const {
+    isOpen: isSigninOpen,
+    onOpen: onSigninOpen,
+    onClose: onSigninClose,
+  } = useDisclosure(); // For Sign-in Modal
 
+  return (
+    <Signin
+      isOpen={isSigninOpen}
+      onClose={onSigninClose}
+      onOpen={onSigninOpen}
+    />
+  );
+}
 function Signup({ isOpen, onClose, onSignIn }) {
   const initialRef = useRef(null);
   const finalRef = useRef(null);
-
+  const {
+    isOpen: isSigninOpen,
+    onOpen: onSigninOpen,
+    onClose: onSigninClose,
+  } = useDisclosure();
   function handleSignUp() {
     alert("Successfully Signed Up");
     // Add your signup logic here
@@ -103,10 +123,20 @@ function Signup({ isOpen, onClose, onSignIn }) {
             onClick={handleSignInClick} // Use the function with a delay for smooth transition
           >
             Already a member?{" "}
-            <u>
-              <b>Sign in</b>
-            </u>
           </Text>
+          {/* Clickable Sign in Text */}
+          <u>
+            <b onClick={onSigninOpen} style={{ cursor: "pointer" }}>
+              Sign in
+            </b>
+          </u>
+
+          {/* Render the Signin component */}
+          <Signin
+            isOpen={isSigninOpen}
+            onClose={onSigninClose}
+            onOpen={onSigninOpen}
+          />
 
           <Text mt="25px" textAlign="center" fontSize="xs">
             By creating an account, you agree to our <u>Terms of Use</u> and
