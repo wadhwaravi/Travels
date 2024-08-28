@@ -69,7 +69,7 @@ function SubNav() {
         display="flex"
         alignItems="center"
       >
-        <Link fontSize="md">Things to Do</Link>
+       <Link fontSize="md" to={"/thingstodo"} >Things to Do</Link>
         <LocalActivityOutlinedIcon />
       </Box>
       <Box
