@@ -6,6 +6,7 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import Signin from "./Signin";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import SignInOptions from "./SignInOptions";
 
 
 function Navbar() {
@@ -94,7 +95,7 @@ function handleClick(){
                 Sanghamitra
               </Button>
             ) : (
-              <Signin />
+              <SignInOptions />
             )}
           </Link>
             <Text fontWeight="500" fontSize="md" as={Link} onClick={handleClick}>
