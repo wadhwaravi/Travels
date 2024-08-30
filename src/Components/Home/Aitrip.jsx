@@ -13,6 +13,7 @@ function Homeone() {
       color="white" // Ensures text is readable
       textAlign="center"
       rounded="40px"
+      marginBottom="100px"
     >
       {/* AI Trip Planner Headline */}
       <Text fontSize="4xl" fontWeight="bold" mb="4">
@@ -42,6 +43,7 @@ function Homeone() {
           size="lg"
           _placeholder={{ color: "gray.500" }}
           _focus={{ boxShadow: "none" }}
+          color="black"
         />
         {/* CTA Button */}
         <Button

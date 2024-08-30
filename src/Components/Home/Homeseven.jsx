@@ -24,7 +24,7 @@ function Homeseven(){
         }
     ]
 
-    return <Box w="85%" m="auto" textAlign="left" mt="50px" mb="50px">
+    return <Box w="85%" m="auto" textAlign="left" mt="50px" mb="50px" marginBottom="100px">
     <Text fontWeight="700" fontSize='3xl'>Home Rentals Near You</Text>
     <Box display="grid" justifyContent="space-between" gridTemplateColumns="repeat(4, 1fr)" gap="15px" mt="25px">
         <Box>

@@ -125,7 +125,8 @@ function Homefour() {
       color="black"
       p="20px"
       borderRadius="8px"
-    >
+      marginBottom="100px"
+          >
       <Text fontWeight="600" fontSize="2xl">
         Ask a Local
       </Text>

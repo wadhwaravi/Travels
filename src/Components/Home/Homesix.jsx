@@ -26,7 +26,7 @@ function Homesix(){
         }
     ]
 
-    return <Box w="85%" m="auto" pt="15px" textAlign="left" mt="40px">
+    return <Box w="85%" m="auto" pt="15px" textAlign="left" mt="40px" marginBottom="100px">
                 <Text fontWeight="700" fontSize='2xl'>Top destinations for beach lovers</Text>
                 <Text fontSize='md'>Recommended based on your activity</Text>
                 <Box display="grid" justifyContent="space-between" gridTemplateColumns="repeat(4, 1fr)" gap="15px" mt="15px">

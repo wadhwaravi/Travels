@@ -41,7 +41,7 @@ function SafetyRating() {
   };
 
   return (
-    <Box bg="white" p="20px" mt="40px" borderRadius="8px">
+    <Box bg="white" p="20px" mt="40px" borderRadius="8px" marginBottom="0px">
       <Box textAlign="center" mb="20px">
         <Text fontWeight="600" fontSize="2xl">
           Stay Safe, Travel Smart

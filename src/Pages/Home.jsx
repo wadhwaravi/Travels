@@ -17,13 +17,13 @@ const Home = () => {
   return (
     <Box>
       <Homeone />
-      <Hometwo />
+      <Hometwo  />
       <Homethree />
       <Homefour />
       <Homefive />
       <Homesix />
       <Homeseven />
-      <Homeeight />
+      <Homeeight/>
       <TravelBuddyMatching />
       <ChakraProvider>
         <Box bg="#000000">

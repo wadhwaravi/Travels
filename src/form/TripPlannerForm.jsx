@@ -17,7 +17,7 @@ import StageFourForm from './StageFourForm';
 const steps = [
   { title: 'First Step', description: 'Enter your details' },
   { title: 'Second Step', description: 'Verify your info' },
-  {title: 'Third Step',description: 'Enter Trip Type'},
+  { title: 'Third Step', description: 'Enter Trip Type' },
   { title: 'Final Step', description: 'Select your Interests' },
 ];
 
@@ -35,6 +35,16 @@ const MultiStepForm = () => {
     if (activeStep > 0) {
       setActiveStep((prevStep) => prevStep - 1);
     }
+  };
+
+  const handlePlaceSelection = () => {
+    handleNext();
+  };
+
+  const handleTripSelect = (tripType) => {
+    console.log('Selected Trip Type:', tripType);
+    // Here you could also update formData if needed
+    handleNext(); // Go to the next stage
   };
 
   const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -85,27 +95,25 @@ const MultiStepForm = () => {
         </Center>
 
         <Box>
-            {activeStep === 0 && (
-              <StageOneForm/>
-            )}
-
-            {activeStep === 1 && (
-              <StageTwoForm/>
-            )}
-
-            {activeStep === 2 && (
-              <StageThreeForm/>
-            )}
-            {activeStep === 3 && (
-              <StageFourForm/>
-            )}
+          {activeStep === 0 && (
+            <StageOneForm onPlaceSelect={handlePlaceSelection} />
+          )}
+          {activeStep === 1 && (
+            <StageTwoForm />
+          )}
+          {activeStep === 2 && (
+            <StageThreeForm onTripSelect={handleTripSelect} /> 
+          )}
+          {activeStep === 3 && (
+            <StageFourForm />
+          )}
         </Box>
 
         <Flex mt={4} justify="space-between">
           <Button onClick={handleBack} isDisabled={activeStep === 0}>
             Back
           </Button>
-          <Button onClick={handleNext} isDisabled={activeStep === steps.length}>
+          <Button onClick={handleNext} isDisabled={activeStep === steps.length - 1}>
             {activeStep === steps.length - 1 ? 'Submit' : 'Next'}
           </Button>
         </Flex>

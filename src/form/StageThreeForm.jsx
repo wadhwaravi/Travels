@@ -1,15 +1,15 @@
 import React from 'react';
-import { Box, Text, Icon, Flex } from '@chakra-ui/react';
+import { Box, Text, Flex } from '@chakra-ui/react';
 import { TRIPTYPE } from '../data';
 
-const StageThreeForm = () => {
+const StageThreeForm = ({ onTripSelect }) => {
   return (
     <Box
       display="flex"
       flexDirection="column"
       alignItems="center"
       p={4}
-      maxW="1200px" // Increased max width to accommodate four cards in a row
+      maxW="1200px"
       mx="auto"
     >
       <Box mb={6}>
@@ -37,12 +37,14 @@ const StageThreeForm = () => {
             flexDirection="column"
             alignItems="center"
             textAlign="center"
-            width="calc(25% - 16px)" // Adjusted width to fit four items in a row with spacing
+            width="calc(25% - 16px)"
+            cursor="pointer"
             _hover={{
               boxShadow: 'lg',
               transform: 'scale(1.05)',
               transition: 'transform 0.2s, box-shadow 0.2s'
             }}
+            onClick={() => onTripSelect(trip.trip_type)} // Call onTripSelect when a trip is selected
           >
             <Box mb={2} fontSize="2xl">
               {trip.icon}

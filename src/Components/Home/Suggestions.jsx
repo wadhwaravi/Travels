@@ -34,7 +34,7 @@ function Homefive() {
   ];
 
   return (
-    <Box bg="#FAF1ED" p="10px 0px" mt="40px" pb="35px">
+    <Box bg="#FAF1ED" p="10px 0px" mt="40px" pb="35px" marginBottom="100px">
       <Box w="85%" m="auto" textAlign="left" mt="40px">
         <Text fontWeight="600" fontSize="2xl">
           Find Your Ideal Stay
@@ -51,6 +51,7 @@ function Homefive() {
           bg="white"
           borderRadius="8px"
           boxShadow="lg"
+          marginBottom="100px"
         >
           <Text fontWeight="500" fontSize="lg" mb="10px">
             Filter Options

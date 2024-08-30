@@ -1,9 +1,23 @@
-import { Box, InputGroup, InputLeftElement, Input, Icon, Text, Image, Flex } from '@chakra-ui/react';
+import React from 'react';
+import {
+  Box,
+  InputGroup,
+  InputLeftElement,
+  Input,
+  Icon,
+  Text,
+  Image,
+  Flex
+} from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
 import { WHERETOGO } from '../data';
-import React from 'react';
 
-const StageOneForm = () => {
+const StageOneForm = ({ onPlaceSelect }) => {
+  const handlePlaceClick = (place) => {
+    // Call the callback function to move to the next step
+    onPlaceSelect();
+  };
+
   return (
     <Box maxW="600px" mx="auto" display="flex" flexDirection="column" mt={10}>
       <Box mb={6}>
@@ -44,6 +58,7 @@ const StageOneForm = () => {
               transform: 'scale(1.05)',
               boxShadow: 'lg',
             }}
+            onClick={() => handlePlaceClick(place)}
           >
             <Image src={place.image} alt={place.name} boxSize="60px" borderRadius="md" />
             <Box ml={4} flex="1">

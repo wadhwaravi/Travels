@@ -3,7 +3,7 @@ import React from "react";
 
 const Homeeight = () => {
   return (
-    <Box w="100%" bg="#000000">
+    <Box w="100%" bg="#000000" marginBottom="100px">
       <Box
         w="88%"
         m="auto"

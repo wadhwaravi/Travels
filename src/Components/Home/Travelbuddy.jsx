@@ -79,6 +79,7 @@ function TravelBuddyMatching() {
       bg="#FAF1ED"
       borderRadius="8px"
       color="black"
+      marginBottom="100px"
     >
       <Text
         fontWeight="600"

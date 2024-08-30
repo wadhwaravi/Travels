@@ -2,7 +2,7 @@ import { Text, Box, Button, Image } from "@chakra-ui/react";
 
 
 function Homethree(){
-    return <Box w="85%" m="auto" mt="80px" display="flex" justifyContent="space-between" bg="#FAF1ED" >
+    return <Box w="85%" m="auto" mt="80px" display="flex" justifyContent="space-between" bg="#FAF1ED" marginBottom="100px">
         <Box textAlign="left" p="5px 20px">
             <Text fontWeight="600" mt="30px" fontSize='2xl'>Get out there</Text>
             <Text fontWeight="400" fontSize='md'>Best of the  Best tours, attractions & activities you won't want to miss.</Text>

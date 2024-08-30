@@ -93,7 +93,7 @@ function Hometwo() {
   ];
 
   return (
-    <Box w="85%" m="auto" textAlign="left" mt="40px">
+    <Box w="85%" m="auto" textAlign="left" mt="40px" marginBottom="100px">
       <Text fontWeight="600" fontSize="2xl">
         Explore Top Destinations
       </Text>

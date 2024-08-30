@@ -36,7 +36,7 @@ export const productData = [
 
 const SouvenirMarketplace = () => {
   return (
-    <Box bg="#FFF7E1" p="60px 0" mt="60px">
+    <Box bg="#FFF7E1" p="60px 0" mt="60px" marginBottom="100px">
       <Box w="85%" m="auto" textAlign="center">
         <Text fontWeight="700" fontSize="4xl" mb="10px" color="black">
           Shop Local Treasures
