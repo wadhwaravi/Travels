@@ -10,14 +10,23 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
+import { fetchSafetyData } from "../../api/safetyAPI";
 
 function SafetyRating() {
   const [searchTerm, setSearchTerm] = useState("");
   const [safetyData, setSafetyData] = useState(null);
+  const [loading, setLoading] = useState(false);
   const toast = useToast();
 
-  const handleSearch = () => {
-    // Placeholder for the search functionality
+  // Function to determine safety rating based on number of crimes
+  const determineSafetyRating = (crimes) => {
+    if (crimes < 1000) return "High";
+    if (crimes >= 1000 && crimes <= 8000) return "Moderate";
+    return "Low";
+  };
+
+  // Function to handle search and fetch safety data
+  const handleSearch = async () => {
     if (searchTerm.trim() === "") {
       toast({
         title: "Please enter a location.",
@@ -28,16 +37,71 @@ function SafetyRating() {
       return;
     }
 
-    // Example data - replace with API call
-    const exampleData = {
-      location: searchTerm,
-      rating: "Moderate",
-      summary:
-        "This location has an average safety rating based on historical data and user reviews.",
-      tips: "Avoid traveling alone at night and be cautious of your surroundings.",
-    };
+    setLoading(true);
 
-    setSafetyData(exampleData);
+    try {
+      const data = await fetchSafetyData(searchTerm);
+      
+      if (data && data.length > 0) {
+        const locationData = data.find(item => item.district.toLowerCase() === searchTerm.toLowerCase());
+
+        if (locationData) {
+          const rating = determineSafetyRating(locationData.crimes);
+          const summary = `This location has a ${rating} safety rating based on historical data and user reviews.`;
+          const tips = getSafetyTips(rating);
+
+          setSafetyData({
+            district: locationData.district,
+            rating,
+            summary,
+            tips,
+          });
+        } else {
+          toast({
+            title: "No data found.",
+            description: "No safety data available for the entered location.",
+            status: "info",
+            duration: 3000,
+            isClosable: true,
+          });
+          setSafetyData(null);
+        }
+      } else {
+        toast({
+          title: "No data found.",
+          description: "No safety data available for the entered location.",
+          status: "info",
+          duration: 3000,
+          isClosable: true,
+        });
+        setSafetyData(null);
+      }
+    } catch (error) {
+      toast({
+        title: "Error fetching data.",
+        description: "There was a problem fetching the safety rating.",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
+      setSafetyData(null);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Function to get safety tips based on the rating
+  const getSafetyTips = (rating) => {
+    switch (rating) {
+      case "High":
+        return "This area is relatively safe. Continue to stay alert and follow general safety precautions.";
+      case "Moderate":
+        return "Be cautious in this area. Avoid traveling alone at night and stay aware of your surroundings.";
+      case "Low":
+        return "This area has a higher crime rate. Avoid traveling alone, be very cautious, and stay in well-populated areas.";
+      default:
+        return "";
+    }
   };
 
   return (
@@ -68,6 +132,8 @@ function SafetyRating() {
           p="25px 25px"
           icon={<SearchIcon />}
           onClick={handleSearch}
+          isLoading={loading}
+          loadingText="Searching..."
         />
       </Box>
 
@@ -82,7 +148,7 @@ function SafetyRating() {
             boxShadow="md"
           >
             <Text fontWeight="600" fontSize="lg">
-              Location: {safetyData.location}
+              Location: {safetyData.district}
             </Text>
             <Text fontWeight="500" fontSize="md" color="teal.500">
               Safety Rating: {safetyData.rating}
@@ -119,7 +185,7 @@ function SafetyRating() {
       )}
 
       {/* Default Message */}
-      {!safetyData && (
+      {!safetyData && !loading && (
         <Box textAlign="center" mt="40px">
           <Text fontSize="md" color="gray.600">
             Enter a location to see its safety rating.
