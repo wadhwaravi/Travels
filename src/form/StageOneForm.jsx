@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Box,
   InputGroup,
@@ -7,14 +7,15 @@ import {
   Icon,
   Text,
   Image,
-  Flex
-} from '@chakra-ui/react';
-import { SearchIcon } from '@chakra-ui/icons';
-import { WHERETOGO } from '../data';
+  Flex,
+} from "@chakra-ui/react";
+import { SearchIcon } from "@chakra-ui/icons";
+import { WHERETOGO } from "../data";
 
-const StageOneForm = ({ onPlaceSelect }) => {
+const StageOneForm = ({ formData, handleChange, onPlaceSelect }) => {
   const handlePlaceClick = (place) => {
     // Call the callback function to move to the next step
+    handleChange({ target: { name: "selectedPlace", value: place.name } });
     onPlaceSelect();
   };
 
@@ -33,7 +34,16 @@ const StageOneForm = ({ onPlaceSelect }) => {
           <InputLeftElement pointerEvents="none">
             <Icon as={SearchIcon} color="gray.300" />
           </InputLeftElement>
-          <Input type="text" placeholder="Search by City or Town" />
+          <Input
+            type="text"
+            placeholder="Search by City or Town"
+            value={formData.selectedPlace || ""}
+            onChange={(e) =>
+              handleChange({
+                target: { name: "selectedPlace", value: e.target.value },
+              })
+            }
+          />
         </InputGroup>
       </Box>
       <Box
@@ -55,12 +65,17 @@ const StageOneForm = ({ onPlaceSelect }) => {
             width="calc(50% - 8px)" // Adjust the width to fit two cards per row
             transition="transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out"
             _hover={{
-              transform: 'scale(1.05)',
-              boxShadow: 'lg',
+              transform: "scale(1.05)",
+              boxShadow: "lg",
             }}
             onClick={() => handlePlaceClick(place)}
           >
-            <Image src={place.image} alt={place.name} boxSize="60px" borderRadius="md" />
+            <Image
+              src={place.image}
+              alt={place.name}
+              boxSize="60px"
+              borderRadius="md"
+            />
             <Box ml={4} flex="1">
               <Text as="h1" fontSize="md" fontWeight="bold">
                 {place.name}

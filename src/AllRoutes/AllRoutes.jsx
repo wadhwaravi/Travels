@@ -8,13 +8,13 @@ import ProductDetail from "../Components/MarketPlace/ProductDetail";
 import CitySelection from "../Components/Home/CitySelection";
 import Homefour from "../Components/Home/AskALocal";
 import TripPlannerForm from "../form/TripPlannerForm";
-
+import Itenary from "../Components/GenerateItenary";
 import CartPage from "../Components/Cart/CartPage";
 function AllRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />}></Route>
-      <Route path="/Trip-planning" element={<TripPlannerForm/>}></Route>
+      <Route path="/Trip-planning" element={<TripPlannerForm />}></Route>
       <Route path="/hotel" element={<Hotel />}></Route>
       <Route path="/Thingstodo" element={<Things />}></Route>
       <Route path="/marketplace" element={<Marketplace />} />
@@ -23,6 +23,7 @@ function AllRoutes() {
       <Route path="/connect-with-local" element={<AskLocalPage />} />
       <Route path="/city-selection" element={<CitySelection />} />
       <Route path="/cart" element={<CartPage />} />
+      <Route path="/itinerary" element={<Itenary />} />
     </Routes>
   );
 }

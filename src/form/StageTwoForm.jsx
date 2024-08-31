@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Box,
   Button,
@@ -9,35 +9,41 @@ import {
   IconButton,
   Grid,
   GridItem,
-} from '@chakra-ui/react';
-import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
+} from "@chakra-ui/react";
+import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
-const StageTwoForm = () => {
+const StageTwoForm = ({ formData, handleChange }) => {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [startMonth, setStartMonth] = useState(new Date());
   const [endMonth, setEndMonth] = useState(new Date());
 
-  // Get month name
   const getMonthName = (date) => {
     const monthNames = [
-      'January', 'February', 'March', 'April', 'May', 'June',
-      'July', 'August', 'September', 'October', 'November', 'December',
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
     ];
     return `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
   };
 
-  // Get number of days in a month
   const getDaysInMonth = (year, month) => {
     return new Date(year, month + 1, 0).getDate();
   };
 
-  // Get starting day of the week for a month
   const getStartDayOfWeek = (year, month) => {
     return new Date(year, month, 1).getDay();
   };
 
-  // Render calendar header
   const renderHeader = (date, setDate) => (
     <Flex justify="space-between" align="center" mb={4}>
       <IconButton
@@ -45,7 +51,9 @@ const StageTwoForm = () => {
         aria-label="Previous month"
         size="sm"
         variant="ghost"
-        onClick={() => setDate(new Date(date.getFullYear(), date.getMonth() - 1))}
+        onClick={() =>
+          setDate(new Date(date.getFullYear(), date.getMonth() - 1))
+        }
       />
       <Text fontSize="lg" fontWeight="bold">
         {getMonthName(date)}
@@ -55,14 +63,15 @@ const StageTwoForm = () => {
         aria-label="Next month"
         size="sm"
         variant="ghost"
-        onClick={() => setDate(new Date(date.getFullYear(), date.getMonth() + 1))}
+        onClick={() =>
+          setDate(new Date(date.getFullYear(), date.getMonth() + 1))
+        }
       />
     </Flex>
   );
 
-  // Render days of the week
   const renderDays = () => {
-    const daysOfWeek = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
+    const daysOfWeek = ["M", "T", "W", "T", "F", "S", "S"];
     return (
       <Grid templateColumns="repeat(7, 1fr)" mb={2}>
         {daysOfWeek.map((day, i) => (
@@ -76,8 +85,7 @@ const StageTwoForm = () => {
     );
   };
 
-  // Render calendar cells
-  const renderCells = (date, selectedDate, setSelectedDate) => {
+  const renderCells = (date, selectedDate, setSelectedDate, dateType) => {
     const year = date.getFullYear();
     const month = date.getMonth();
     const daysInMonth = getDaysInMonth(year, month);
@@ -85,7 +93,6 @@ const StageTwoForm = () => {
 
     let days = [];
 
-    // Create empty cells for the days from the previous month
     for (let i = 0; i < startDayOfWeek; i++) {
       days.push(
         <GridItem key={`empty-${i}`} textAlign="center">
@@ -96,18 +103,27 @@ const StageTwoForm = () => {
       );
     }
 
-    // Create cells for the current month's days
     for (let day = 1; day <= daysInMonth; day++) {
       const currentDate = new Date(year, month, day);
-      const isSelected = selectedDate && selectedDate.toDateString() === currentDate.toDateString();
+      const isSelected =
+        selectedDate &&
+        selectedDate.toDateString() === currentDate.toDateString();
 
       days.push(
         <GridItem key={day} textAlign="center">
           <Button
-            variant={isSelected ? 'solid' : 'ghost'}
-            colorScheme={isSelected ? 'blackAlpha' : 'gray'}
+            variant={isSelected ? "solid" : "ghost"}
+            colorScheme={isSelected ? "blackAlpha" : "gray"}
             size="sm"
-            onClick={() => setSelectedDate(currentDate)}
+            onClick={() => {
+              setSelectedDate(currentDate);
+              handleChange({
+                target: {
+                  name: dateType,
+                  value: currentDate.toISOString().split("T")[0], // Save date in YYYY-MM-DD format
+                },
+              });
+            }}
           >
             {day}
           </Button>
@@ -135,7 +151,9 @@ const StageTwoForm = () => {
         <Box>
           <Text mb={2}>Start Date</Text>
           <Input
-            value={startDate ? startDate.toLocaleDateString() : 'Select start date'}
+            value={
+              startDate ? startDate.toLocaleDateString() : "Select start date"
+            }
             readOnly
             mb={4}
             placeholder="Start Date"
@@ -144,7 +162,7 @@ const StageTwoForm = () => {
         <Box>
           <Text mb={2}>End Date</Text>
           <Input
-            value={endDate ? endDate.toLocaleDateString() : 'Select end date'}
+            value={endDate ? endDate.toLocaleDateString() : "Select end date"}
             readOnly
             mb={4}
             placeholder="End Date"
@@ -157,14 +175,14 @@ const StageTwoForm = () => {
         <Box>
           {renderHeader(startMonth, setStartMonth)}
           {renderDays()}
-          {renderCells(startMonth, startDate, setStartDate)}
+          {renderCells(startMonth, startDate, setStartDate, "startDate")}
         </Box>
 
         {/* End Date Calendar */}
         <Box>
           {renderHeader(endMonth, setEndMonth)}
           {renderDays()}
-          {renderCells(endMonth, endDate, setEndDate)}
+          {renderCells(endMonth, endDate, setEndDate, "endDate")}
         </Box>
       </Flex>
     </Box>

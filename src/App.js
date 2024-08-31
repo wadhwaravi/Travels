@@ -1,16 +1,25 @@
-import AllRoutes from './AllRoutes/AllRoutes';
-import './App.css';
-import Footer from './Components/Footer';
-import Navbar from './Components/Navbar';
-import SubNav from './Components/Subnav';
-
+import AllRoutes from "./AllRoutes/AllRoutes";
+import "./App.css";
+import Footer from "./Components/Footer";
+import Navbar from "./Components/Navbar";
+import SubNav from "./Components/Subnav";
+import { useLocation } from "react-router-dom";
 function App() {
+  const location = useLocation();
+
+  // Add the paths where you don't want to show Navbar and Footer
+  const hideNavbarFooterRoutes = ["/Trip-Planning"];
+
+  const shouldHideNavbarFooter = hideNavbarFooterRoutes.includes(
+    location.pathname
+  );
+
   return (
     <div className="App">
-      <Navbar />
-      <SubNav />
+      {!shouldHideNavbarFooter && <Navbar />}
+      {!shouldHideNavbarFooter && <SubNav />}
       <AllRoutes />
-      <Footer />
+      {!shouldHideNavbarFooter && <Footer />}
     </div>
   );
 }

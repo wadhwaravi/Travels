@@ -1,8 +1,14 @@
-import React from 'react';
-import { Box, Text, Flex } from '@chakra-ui/react';
-import { TRIPTYPE } from '../data';
+import React from "react";
+import { Box, Text, Flex } from "@chakra-ui/react";
+import { TRIPTYPE } from "../data";
 
-const StageThreeForm = ({ onTripSelect }) => {
+const StageThreeForm = ({ formData, onTripSelect, handleChange }) => {
+  const onTrip = (trip) => {
+    onTripSelect();
+    handleChange({
+      target: { name: "trip_Type", value: trip.trip_type },
+    });
+  };
   return (
     <Box
       display="flex"
@@ -20,12 +26,7 @@ const StageThreeForm = ({ onTripSelect }) => {
           Select One
         </Text>
       </Box>
-      <Flex
-        wrap="wrap"
-        gap={4}
-        justifyContent="space-between"
-        width="100%"
-      >
+      <Flex wrap="wrap" gap={4} justifyContent="space-between" width="100%">
         {TRIPTYPE.map((trip, index) => (
           <Box
             key={index}
@@ -40,11 +41,11 @@ const StageThreeForm = ({ onTripSelect }) => {
             width="calc(25% - 16px)"
             cursor="pointer"
             _hover={{
-              boxShadow: 'lg',
-              transform: 'scale(1.05)',
-              transition: 'transform 0.2s, box-shadow 0.2s'
+              boxShadow: "lg",
+              transform: "scale(1.05)",
+              transition: "transform 0.2s, box-shadow 0.2s",
             }}
-            onClick={() => onTripSelect(trip.trip_type)} // Call onTripSelect when a trip is selected
+            onClick={() => onTrip(trip)} // Call onTripSelect when a trip is selected
           >
             <Box mb={2} fontSize="2xl">
               {trip.icon}
