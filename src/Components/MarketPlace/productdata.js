@@ -19,15 +19,6 @@ export const productData = [
     rating: 4.5,
   },
   {
-    id: 3,
-    name: "Mysore Pak",
-    image: "https://example.com/mysorepak.jpg",
-    price: "₹500",
-    description: "Delicious Mysore Pak, a traditional sweet from Karnataka.",
-    category: "Local Food Products",
-    rating: 4.7,
-  },
-  {
     id: 4,
     name: "Jaipur Blue Pottery Vase",
     image: "https://example.com/bluepottery.jpg",
@@ -36,6 +27,15 @@ export const productData = [
       "Handcrafted Blue Pottery vase from Jaipur, featuring intricate floral designs.",
     category: "Handicrafts",
     rating: 4.6,
+  },
+  {
+    id: 3,
+    name: "Mysore Pak",
+    image: "https://example.com/mysorepak.jpg",
+    price: "₹500",
+    description: "Delicious Mysore Pak, a traditional sweet from Karnataka.",
+    category: "Local Food Products",
+    rating: 4.7,
   },
   {
     id: 5,

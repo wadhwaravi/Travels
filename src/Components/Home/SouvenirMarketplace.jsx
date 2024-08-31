@@ -1,13 +1,16 @@
-//
 import React from "react";
 import { Box, Image, Text, Grid, Button, Flex, Icon } from "@chakra-ui/react";
 import { StarIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
+import jaipur from "../../assets/Jaipur.png";
+import madhubani from "../../assets/Madhubani (1).png";
+import pashmina from "../../assets/Pashmina.png";
+
 export const productData = [
   {
     id: 1,
     name: "Madhubani Painting",
-    image: "https://example.com/madhubani.jpg",
+    image: madhubani, // Use imported image
     price: "₹2,500",
     description: "Traditional Madhubani painting by artisans from Bihar.",
     category: "Handicrafts",
@@ -16,20 +19,21 @@ export const productData = [
   {
     id: 2,
     name: "Pashmina Shawl",
-    image: "https://example.com/pashmina.jpg",
+    image: pashmina, // Use imported image
     price: "₹5,000",
     description: "Authentic Kashmiri Pashmina shawl.",
     category: "Handicrafts",
     rating: 4.5,
   },
   {
-    id: 3,
-    name: "Mysore Pak",
-    image: "https://example.com/mysorepak.jpg",
-    price: "₹500",
-    description: "Famous Mysore Pak from Karnataka.",
-    category: "Local Food Products",
-    rating: 4.7,
+    id: 4,
+    name: "Jaipur Blue Pottery Vase",
+    image: jaipur, // Use imported image
+    price: "₹1,200",
+    description:
+      "Handcrafted Blue Pottery vase from Jaipur, featuring intricate floral designs.",
+    category: "Handicrafts",
+    rating: 4.6,
   },
   // Add more products as needed
 ];
@@ -55,15 +59,20 @@ const SouvenirMarketplace = () => {
               overflow="hidden"
               position="relative"
               _hover={{ transform: "scale(1.05)", transition: "all 0.3s" }}
+              height="400px" // Adjust height here
             >
               <Image
                 src={product.image}
                 alt={product.name}
                 objectFit="cover"
                 w="100%"
-                h="200px"
+                h="250px" // Adjust height here
               />
-              <Box p="20px" textAlign="left">
+              <Box p="20px" textAlign="left" height="calc(100% - 250px)" // Adjust padding here
+                display="flex"
+                flexDirection="column"
+                justifyContent="space-between"
+              >
                 <Text fontWeight="600" fontSize="2xl" mb="5px" color="black">
                   {product.name}
                 </Text>
@@ -80,7 +89,7 @@ const SouvenirMarketplace = () => {
                   {product.price}
                 </Text>
                 <Button
-                  mt="40px"
+                  mt="auto"
                   fontWeight="700"
                   color="white"
                   bg="black"
