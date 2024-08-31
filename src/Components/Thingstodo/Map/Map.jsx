@@ -1,9 +1,8 @@
-
 import React, { useCallback, useState } from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import { useMediaQuery, Box, Image, Text, Tooltip } from '@chakra-ui/react';
 import { MdLocationOn } from 'react-icons/md';
-import { FaUtensils, FaHotel, FaLandmark } from 'react-icons/fa'; // Use available icons
+import { FaUtensils, FaHotel, FaLandmark } from 'react-icons/fa';
 
 const containerStyle = {
     height: '84vh',
