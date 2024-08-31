@@ -20,9 +20,14 @@ function SafetyRating() {
 
   // Function to determine safety rating based on number of crimes
   const determineSafetyRating = (crimes) => {
-    if (crimes < 1000) return "High";
-    if (crimes >= 1000 && crimes <= 8000) return "Moderate";
-    return "Low";
+    if (crimes < 500) return "Very High";
+    if (crimes >= 500 && crimes < 1000) return "High";
+    if (crimes >= 1000 && crimes < 3000) return "Moderately High";
+    if (crimes >= 3000 && crimes < 5000) return "Moderate";
+    if (crimes >= 5000 && crimes < 6500) return "Moderately Low";
+    if (crimes >= 6500 && crimes < 8000) return "Low";
+    if (crimes >= 8000 && crimes < 10000) return "Very Low";
+    return "Extremely Low";
   };
 
   // Function to handle search and fetch safety data
@@ -41,9 +46,11 @@ function SafetyRating() {
 
     try {
       const data = await fetchSafetyData(searchTerm);
-      
+
       if (data && data.length > 0) {
-        const locationData = data.find(item => item.district.toLowerCase() === searchTerm.toLowerCase());
+        const locationData = data.find(
+          (item) => item.district.toLowerCase() === searchTerm.toLowerCase()
+        );
 
         if (locationData) {
           const rating = determineSafetyRating(locationData.crimes);

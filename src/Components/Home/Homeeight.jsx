@@ -26,7 +26,7 @@ const Homeeight = () => {
             />
             <Box>
               <Text fontSize="35px" fontWeight="900" color="white">
-                Travellers' Choice Best of the Best
+                Community Champions
               </Text>
             </Box>
           </Box>
