@@ -3,6 +3,7 @@ import Header from '../Components/Thingstodo/Header/Header';
 import Map from '../Components/Thingstodo/Map/Map'; 
 import List from '../Components/Thingstodo/List/List'; 
 import { getPlacesData } from '../api';
+import { debounce } from 'lodash';
 
 const Things = () => {
     const [places, setPlaces] = useState([]);
@@ -17,36 +18,46 @@ const Things = () => {
 
     // Fetch current location
     useEffect(() => {
-        navigator.geolocation.getCurrentPosition(({ coords: { latitude, longitude } }) => {
+        const success = ({ coords: { latitude, longitude } }) => {
             setCoordinates({ lat: latitude, lng: longitude });
-        }, (error) => {
+        };
+
+        const error = (error) => {
             console.error('Error fetching location:', error);
-        });
+            // Optionally, set default coordinates here or prompt user
+        };
+
+        navigator.geolocation.getCurrentPosition(success, error);
     }, []);
 
+    // Filter places based on rating
     useEffect(() => {
         if (places) {
             setFilteredPlaces(places.filter((place) => place.rating > rating));
         }
     }, [rating, places]);
 
+    // Fetch places data based on type and bounds
     useEffect(() => {
         if (bounds?.sw && bounds?.ne) {
             setIsLoading(true);
-            getPlacesData(type, bounds.sw, bounds.ne)
-                .then((data) => {
-                    setPlaces(data || []);  
+            const fetchPlaces = debounce(async () => {
+                try {
+                    const data = await getPlacesData(type, bounds.sw, bounds.ne);
+                    setPlaces(data || []);
                     setFilteredPlaces([]);
-                    setIsLoading(false);
-                })
-                .catch((error) => {
+                } catch (error) {
                     console.error('Error fetching places data:', error);
+                } finally {
                     setIsLoading(false);
-                });
+                }
+            }, 500); // Adjust debounce delay as needed
+
+            fetchPlaces();
         }
     }, [type, bounds, coordinates]);
 
-   
+    // Handle place changes from autocomplete
     const onLoad = useCallback((autoC) => setAutocomplete(autoC), []);
 
     const onPlaceChanged = useCallback(() => {

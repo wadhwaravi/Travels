@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Image, Text, Card, CardBody, Flex, Icon, HStack, Stack, Button, Tag } from '@chakra-ui/react';
+import {  Image, Text, Card, CardBody, Flex, Icon, HStack, Stack, Tag } from '@chakra-ui/react';
 import { MdLocationOn, MdPhone } from 'react-icons/md';
 import { StarIcon } from '@chakra-ui/icons';
 
