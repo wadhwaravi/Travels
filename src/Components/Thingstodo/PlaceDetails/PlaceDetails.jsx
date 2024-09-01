@@ -1,8 +1,8 @@
 import React from 'react';
-import {  Image, Text, Card, CardBody, Flex, Icon, HStack, Stack, Tag } from '@chakra-ui/react';
+import { Image, Text, Card, CardBody, Flex, Icon, HStack, Stack,  Tag } from '@chakra-ui/react';
 import { MdLocationOn, MdPhone } from 'react-icons/md';
 import { StarIcon } from '@chakra-ui/icons';
-
+import { getPlacesData } from '../../../api';
 const PlaceDetails = ({ place, selected, refProp }) => {
     if (selected) refProp?.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
