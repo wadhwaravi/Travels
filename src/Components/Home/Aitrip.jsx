@@ -1,5 +1,5 @@
 import { SearchIcon } from "@chakra-ui/icons";
-import { Box, Input, Button, Text ,Link} from "@chakra-ui/react";
+import { Box, Input, Button, Text, Link } from "@chakra-ui/react";
 
 function Homeone() {
   return (

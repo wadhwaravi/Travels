@@ -17,20 +17,20 @@ const Home = () => {
   return (
     <Box>
       <Homeone />
+      <Hometwo />
+      <Homethree />
       <Homefour />
-      <SafetyRatingsPage />
+      <Homefive />
+      <Homesix />
       <TravelBuddyMatching />
       <ChakraProvider>
         <Box bg="#000000">
           <SouvenirMarketplace />
         </Box>
       </ChakraProvider>
-      <Hometwo />
-      <Homethree />
 
-      <Homefive />
-      <Homesix />
       <Homeeight />
+      <SafetyRatingsPage />
     </Box>
   );
 };
