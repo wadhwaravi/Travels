@@ -39,7 +39,7 @@ function AskLocalPage() {
                 role: "user",
                 parts: [
                   {
-                    text: `Behave as a local of ${city} reply this question in one line english ${userMessage.text}`,
+                    text: `As a knowledgeable local of ${city}, answer the following question in one line in English: "${userMessage.text}". Ensure your response reflects local customs, culture, and insights.`,
                   },
                 ],
               },
