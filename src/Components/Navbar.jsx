@@ -7,7 +7,7 @@ import Signin from "./Signin";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SignInOptions from "./SignInOptions";
-
+import logo from "./logo.png";
 
 function Navbar() {
   const [isscroll, setisscroll] = useState(false);
@@ -27,12 +27,11 @@ function Navbar() {
 
   const [isAuth, setAuth] = useState(false);
 
-const navigate=useNavigate()
+  const navigate = useNavigate();
 
-function handleClick(){
-  navigate('/cart')
-}
-
+  function handleClick() {
+    navigate("/cart");
+  }
 
   return (
     <Box
@@ -52,12 +51,7 @@ function handleClick(){
         justifyContent="space-between"
       >
         <Link to="/">
-          <Image
-            boxSize="120px"
-            height="72px"
-            src="https://img.freepik.com/premium-vector/travel-logo-design-color-blue-black_928838-182.jpg"
-            alt="logo"
-          />
+          <Image boxSize="100px" height="72px" src={logo} alt="logo" />
         </Link>
         <Box display="flex" gap="25px" alignItems="center">
           <Link display="flex">
@@ -98,11 +92,10 @@ function handleClick(){
               <SignInOptions />
             )}
           </Link>
-            <Text fontWeight="500" fontSize="md" as={Link} onClick={handleClick}>
+          <Text fontWeight="500" fontSize="md" as={Link} onClick={handleClick}>
             <ShoppingCartOutlinedIcon />
-
-              Basket
-            </Text>
+            Basket
+          </Text>
         </Box>
       </Box>
     </Box>

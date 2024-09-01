@@ -12,12 +12,12 @@ import {
   ModalContent,
   ModalOverlay,
   Text,
-  useDisclosure, 
+  useDisclosure,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import Signup from "./Signup"; // Import Signup component
 
-function Signin({ isOpen, onClose, onOpen }) { 
+function Signin({ isOpen, onClose, onOpen }) {
   const {
     isOpen: isSignupOpen,
     onOpen: onSignupOpen,
@@ -80,7 +80,14 @@ function Signin({ isOpen, onClose, onOpen }) {
               </Box>
             </FormControl>
 
-            <Text mt="10px" ml="5px" textDecoration="underline" color="black" fontWeight="400" fontSize="md">
+            <Text
+              mt="10px"
+              ml="5px"
+              textDecoration="underline"
+              color="black"
+              fontWeight="400"
+              fontSize="md"
+            >
               Forgot Password?
             </Text>
 
@@ -101,10 +108,17 @@ function Signin({ isOpen, onClose, onOpen }) {
               </Button>
             </FormControl>
 
-            <Box w="97%" m="auto" mt="25px" display="flex" gap="8px" alignItems="center">
+            <Box
+              w="97%"
+              m="auto"
+              mt="25px"
+              display="flex"
+              gap="8px"
+              alignItems="center"
+            >
               <Divider />
               <Text w="100%" fontSize="md">
-              Not a member?
+                Not a member?
               </Text>
               <Divider />
             </Box>
@@ -120,24 +134,28 @@ function Signin({ isOpen, onClose, onOpen }) {
               <u>
                 <b>Join</b>
               </u>{" "}
-              to unlock the best of Tripadvisor.
+              to unlock the best
             </Text>
 
             <Text mt="25px" textAlign="center" fontSize="xs">
-              By proceeding, you agree to our <u>Terms of Use</u> and confirm you have read our{" "}
-              <u>Privacy and Cookie Statement</u>.
+              By proceeding, you agree to our <u>Terms of Use</u> and confirm
+              you have read our <u>Privacy and Cookie Statement</u>.
             </Text>
 
             <Text mt="15px" textAlign="center" mb="20px" fontSize="xs">
-              This site is protected by reCAPTCHA and the Google <u>Privacy Policy</u> and{" "}
-              <u>Terms of Service</u> apply.
+              This site is protected by reCAPTCHA and the Google{" "}
+              <u>Privacy Policy</u> and <u>Terms of Service</u> apply.
             </Text>
           </ModalBody>
         </ModalContent>
       </Modal>
-
       {/* Sign Up Modal */}
-      <Signup isOpen={isSignupOpen} onClose={onSignupClose} onSignIn={onOpen} /> {/* Passing onOpen prop correctly */}
+      <Signup
+        isOpen={isSignupOpen}
+        onClose={onSignupClose}
+        onSignIn={onOpen}
+      />{" "}
+      {/* Passing onOpen prop correctly */}
     </>
   );
 }

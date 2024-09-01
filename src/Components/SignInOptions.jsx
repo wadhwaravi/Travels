@@ -50,7 +50,7 @@ function SignInOptions() {
           <ModalCloseButton />
           <ModalBody pb={6} p="20px 40px">
             <Text fontSize="2xl" fontWeight="500" textAlign="center" mb="20px">
-              Sign in to unlock the best of Tripadvisor.
+              Sign in to unlock the best.
             </Text>
 
             {/* Continue with Google Button */}
@@ -96,12 +96,13 @@ function SignInOptions() {
             </Button>
 
             <Text mt="25px" textAlign="center" fontSize="xs">
-              By proceeding, you agree to our <u>Terms of Use</u> and confirm you
-              have read our <u>Privacy and Cookie Statement</u>.
+              By proceeding, you agree to our <u>Terms of Use</u> and confirm
+              you have read our <u>Privacy and Cookie Statement</u>.
             </Text>
 
             <Text mt="15px" textAlign="center" fontSize="xs">
-              This site is protected by reCAPTCHA and the Google <u>Privacy Policy</u> and <u>Terms of Service</u> apply.
+              This site is protected by reCAPTCHA and the Google{" "}
+              <u>Privacy Policy</u> and <u>Terms of Service</u> apply.
             </Text>
           </ModalBody>
         </ModalContent>

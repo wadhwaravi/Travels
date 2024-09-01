@@ -2,7 +2,16 @@ import { Box, Image, Select, Text } from "@chakra-ui/react";
 
 function Footer() {
   return (
-    <Box textAlign="left" bg="#FAF1ED" p="30px 0px" position={"relative"} left={"0px"} right={"0px"} bottom={"0px"} mt={"150px"}>
+    <Box
+      textAlign="left"
+      bg="#FAF1ED"
+      p="30px 0px"
+      position={"relative"}
+      left={"0px"}
+      right={"0px"}
+      bottom={"0px"}
+      mt={"150px"}
+    >
       <Box
         w="85%"
         m="auto"
@@ -130,8 +139,8 @@ function Footer() {
           <Text fontSize="xs">
             This is the version of our website addressed to speakers of English
             in India. If you are a resident of another country or region, please
-            select the appropriate version of Tripadvisor for your country or
-            region in the drop-down menu. more
+            select the appropriate version of for your country or region in the
+            drop-down menu. more
           </Text>
         </Box>
         <Box w="30%">
