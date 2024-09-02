@@ -100,16 +100,27 @@ function SafetyRating() {
   // Function to get safety tips based on the rating
   const getSafetyTips = (rating) => {
     switch (rating) {
+      case "Very High":
+        return "This area is extremely safe. Continue to stay alert and follow general safety practices.";
       case "High":
         return "This area is relatively safe. Continue to stay alert and follow general safety precautions.";
+      case "Moderately High":
+        return "Exercise caution in this area. Be aware of your surroundings and avoid risky situations.";
       case "Moderate":
         return "Be cautious in this area. Avoid traveling alone at night and stay aware of your surroundings.";
+      case "Moderately Low":
+        return "This area has a higher crime rate. Be very cautious, avoid traveling alone, and stay in well-populated areas.";
       case "Low":
         return "This area has a higher crime rate. Avoid traveling alone, be very cautious, and stay in well-populated areas.";
+      case "Very Low":
+        return "This area is not safe. Avoid traveling alone, stay in well-populated areas, and be extremely cautious at all times.";
+      case "Extremely Low":
+        return "This area is extremely unsafe. Avoid it if possible. If you must go, stay in well-populated areas and remain highly vigilant.";
       default:
-        return "";
+        return "Safety rating not recognized. Follow standard safety precautions.";
     }
   };
+  
 
   return (
     <Box bg="white" p="20px" mt="40px" borderRadius="8px" marginBottom="0px">
