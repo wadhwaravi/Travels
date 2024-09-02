@@ -127,10 +127,6 @@ app.get("/safety-rating", (req, res) => {
       crimes: 5696,
     },
     {
-      district: "TOTAL",
-      crimes: 130089,
-    },
-    {
       district: "CHANGLANG",
       crimes: 163,
     },
@@ -181,10 +177,6 @@ app.get("/safety-rating", (req, res) => {
     {
       district: "TIRAP",
       crimes: 127,
-    },
-    {
-      district: "TOTAL",
-      crimes: 2342,
     },
     {
       district: "BARPETA",
@@ -295,10 +287,6 @@ app.get("/safety-rating", (req, res) => {
       crimes: 1381,
     },
     {
-      district: "TOTAL",
-      crimes: 36877,
-    },
-    {
       district: "ARARIA",
       crimes: 2069,
     },
@@ -355,7 +343,7 @@ app.get("/safety-rating", (req, res) => {
       crimes: 2098,
     },
     {
-      district: "JAMALPUR RLY.",
+      district: "JAMALPUR",
       crimes: 225,
     },
     {
@@ -371,7 +359,7 @@ app.get("/safety-rating", (req, res) => {
       crimes: 1811,
     },
     {
-      district: "KATIHAR RLY.",
+      district: "KATIHAR",
       crimes: 417,
     },
     {
@@ -475,10 +463,6 @@ app.get("/safety-rating", (req, res) => {
       crimes: 4076,
     },
     {
-      district: "TOTAL",
-      crimes: 88432,
-    },
-    {
       district: "BALRAMPUR",
       crimes: 235,
     },
@@ -555,21 +539,13 @@ app.get("/safety-rating", (req, res) => {
       crimes: 3130,
     },
     {
-      district: "TOTAL",
-      crimes: 38460,
-    },
-    {
       district: "GOA",
       crimes: 1271,
     },
 
     {
-      district: "AHMEDABAD COMMR.",
+      district: "AHMEDABAD",
       crimes: 13496,
-    },
-    {
-      district: "AHMEDABAD RURAL",
-      crimes: 2146,
     },
     {
       district: "AHWA-DANG",
@@ -612,7 +588,7 @@ app.get("/safety-rating", (req, res) => {
       crimes: 5186,
     },
     {
-      district: "KHEDA NORTH",
+      district: "KHEDA",
       crimes: 3851,
     },
     {
@@ -648,32 +624,20 @@ app.get("/safety-rating", (req, res) => {
       crimes: 1215,
     },
     {
-      district: "RAJKOT COMMR.",
+      district: "RAJKOT",
       crimes: 4774,
     },
     {
-      district: "RAJKOT RURAL",
-      crimes: 4402,
-    },
-    {
-      district: "SURAT COMMR.",
+      district: "SURAT",
       crimes: 3995,
-    },
-    {
-      district: "SURAT RURAL",
-      crimes: 1766,
     },
     {
       district: "SURENDRANAGAR",
       crimes: 3113,
     },
     {
-      district: "VADODARA COMMR.",
+      district: "VADODARA",
       crimes: 5047,
-    },
-    {
-      district: "VADODARA RURAL",
-      crimes: 3137,
     },
     {
       district: "VALSAD",
@@ -682,10 +646,6 @@ app.get("/safety-rating", (req, res) => {
     {
       district: "W.RLY",
       crimes: 1421,
-    },
-    {
-      district: "TOTAL",
-      crimes: 103419,
     },
     {
       district: "AMBALA",
@@ -768,10 +728,6 @@ app.get("/safety-rating", (req, res) => {
       crimes: 1405,
     },
     {
-      district: "TOTAL",
-      crimes: 38759,
-    },
-    {
       district: "BILASPUR",
       crimes: 1074,
     },
@@ -822,10 +778,6 @@ app.get("/safety-rating", (req, res) => {
     {
       district: "UNA",
       crimes: 713,
-    },
-    {
-      district: "TOTAL",
-      crimes: 11499,
     },
     {
       district: "ANANTNAG",
@@ -1020,20 +972,12 @@ app.get("/safety-rating", (req, res) => {
       crimes: 247,
     },
     {
-      district: "TOTAL",
-      crimes: 25447,
-    },
-    {
       district: "BAGALKOT",
       crimes: 1710,
     },
     {
-      district: "BANGALORE COMMR.",
+      district: "BANGALORE",
       crimes: 27254,
-    },
-    {
-      district: "BANGALORE RURAL",
-      crimes: 5209,
     },
     {
       district: "BELGAUM",
@@ -1072,12 +1016,8 @@ app.get("/safety-rating", (req, res) => {
       crimes: 3301,
     },
     {
-      district: "DHARWAD COMMR.",
+      district: "DHARWAD",
       crimes: 1902,
-    },
-    {
-      district: "DHARWAD RURAL",
-      crimes: 899,
     },
     {
       district: "GADAG",
@@ -1116,11 +1056,7 @@ app.get("/safety-rating", (req, res) => {
       crimes: 4807,
     },
     {
-      district: "MYSORE COMMR.",
-      crimes: 1903,
-    },
-    {
-      district: "MYSORE RURAL",
+      district: "MYSORE",
       crimes: 2900,
     },
     {
@@ -1146,10 +1082,6 @@ app.get("/safety-rating", (req, res) => {
     {
       district: "UTTAR KANNADA",
       crimes: 2319,
-    },
-    {
-      district: "TOTAL",
-      crimes: 109098,
     },
     {
       district: "ALAPUZHA",
@@ -1216,10 +1148,6 @@ app.get("/safety-rating", (req, res) => {
       crimes: 2086,
     },
     {
-      district: "TOTAL",
-      crimes: 103847,
-    },
-    {
       district: "BALAGHAT",
       crimes: 2925,
     },
@@ -1238,10 +1166,6 @@ app.get("/safety-rating", (req, res) => {
     {
       district: "BHOPAL",
       crimes: 13708,
-    },
-    {
-      district: "BHOPAL RLY.",
-      crimes: 1036,
     },
     {
       district: "CHHATARPUR",
@@ -1292,16 +1216,8 @@ app.get("/safety-rating", (req, res) => {
       crimes: 13063,
     },
     {
-      district: "INDORE RLY.",
-      crimes: 353,
-    },
-    {
       district: "JABALPUR",
       crimes: 8333,
-    },
-    {
-      district: "JABALPUR RLY.",
-      crimes: 359,
     },
     {
       district: "JHABUA",
@@ -1412,10 +1328,6 @@ app.get("/safety-rating", (req, res) => {
       crimes: 3635,
     },
     {
-      district: "TOTAL",
-      crimes: 181741,
-    },
-    {
       district: "AHMEDNAGAR",
       crimes: 4391,
     },
@@ -1424,20 +1336,12 @@ app.get("/safety-rating", (req, res) => {
       crimes: 4020,
     },
     {
-      district: "AMRAVATI COMMR.",
+      district: "AMRAVATI",
       crimes: 2837,
     },
     {
-      district: "AMRAVATI RURAL",
-      crimes: 3655,
-    },
-    {
-      district: "AURANGABAD COMMR.",
+      district: "AURANGABAD",
       crimes: 2351,
-    },
-    {
-      district: "AURANGABAD RURAL",
-      crimes: 2708,
     },
     {
       district: "BEED",
@@ -1492,20 +1396,8 @@ app.get("/safety-rating", (req, res) => {
       crimes: 28968,
     },
     {
-      district: "MUMBAI RLY.",
-      crimes: 2023,
-    },
-    {
       district: "NAGPUR COMMR.",
       crimes: 9912,
-    },
-    {
-      district: "NAGPUR RLY.",
-      crimes: 1056,
-    },
-    {
-      district: "NAGPUR RURAL",
-      crimes: 5680,
     },
     {
       district: "NANDED",
@@ -1516,11 +1408,7 @@ app.get("/safety-rating", (req, res) => {
       crimes: 1079,
     },
     {
-      district: "NASIK COMMR.",
-      crimes: 2195,
-    },
-    {
-      district: "NASIK RURAL",
+      district: "NASHIK",
       crimes: 4880,
     },
     {
@@ -1536,16 +1424,8 @@ app.get("/safety-rating", (req, res) => {
       crimes: 2475,
     },
     {
-      district: "PUNE COMMR.",
+      district: "PUNE",
       crimes: 8936,
-    },
-    {
-      district: "PUNE RLY.",
-      crimes: 386,
-    },
-    {
-      district: "PUNE RURAL",
-      crimes: 4380,
     },
     {
       district: "RAIGAD",
@@ -1568,12 +1448,8 @@ app.get("/safety-rating", (req, res) => {
       crimes: 821,
     },
     {
-      district: "SOLAPUR COMMR.",
+      district: "SOLAPUR",
       crimes: 1567,
-    },
-    {
-      district: "SOLAPUR RURAL",
-      crimes: 3145,
     },
     {
       district: "THANE",
@@ -1594,10 +1470,6 @@ app.get("/safety-rating", (req, res) => {
     {
       district: "YAVATMAL",
       crimes: 4157,
-    },
-    {
-      district: "TOTAL",
-      crimes: 171233,
     },
     {
       district: "BISHNUPUR",
