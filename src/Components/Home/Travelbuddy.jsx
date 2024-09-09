@@ -26,12 +26,12 @@ function TravelBuddyMatching() {
     const exampleProfiles = [
       {
         id: 1,
-        name: "John Doe",
+        name: "Rahul",
         avatar: "https://example.com/avatar1.jpg",
         destination: "Mumbai",
         dates: "2024-09-15 to 2024-09-20",
-        interests: "Sightseeing, Museums",
-        budget: "₹50,000", // Adjusted to ₹60,000
+        interests: "Sightseeing, Museums,Food",
+        budget: "₹60,000", // Adjusted to ₹60,000
       },
       {
         id: 2,
