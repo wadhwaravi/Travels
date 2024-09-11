@@ -12,21 +12,21 @@ function Homefive() {
   const hotelData = [
     {
       id: 1,
-      img: "https://example.com/hotel1.jpg",
+      img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/c6/fa/7c/caption.jpg?w=1600&h=-1&s=1",
       title: "Grand Luxury Hotel",
       rating: "4.5/5",
       price: "₹8,000 per night",
     },
     {
       id: 2,
-      img: "https://example.com/hotel2.jpg",
+      img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/c6/f8/e7/caption.jpg?w=2400&h=-1&s=1&cx=1920&cy=1080&chk=v1_f9606cb9a59e5ba4d9c3",
       title: "Comfort Inn",
       rating: "4.0/5",
       price: "₹4,500 per night",
     },
     {
       id: 3,
-      img: "https://example.com/hotel3.jpg",
+      img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/c6/fa/08/caption.jpg?w=1600&h=-1&s=1",
       title: "Budget Stay",
       rating: "3.5/5",
       price: "₹2,500 per night",
