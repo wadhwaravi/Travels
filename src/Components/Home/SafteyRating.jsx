@@ -30,6 +30,58 @@ function SafetyRating() {
     return "Extremely Low";
   };
 
+  // Static weather data based on safety rating
+  const weatherData = {
+    "Very High": "Sunny",
+    "High": "Partly Cloudy",
+    "Moderately High": "Cloudy",
+    "Moderate": "Overcast",
+    "Moderately Low": "Light Rain",
+    "Low": "Rainy",
+    "Very Low": "Stormy",
+    "Extremely Low": "Severe Storm",
+  };
+
+  // Static recommendations based on weather conditions
+  const weatherRecommendations = {
+    "Sunny": "Perfect weather for outdoor activities. Carry a hat and sunscreen.",
+    "Partly Cloudy": "Good weather for most activities. Wear sunglasses and stay hydrated.",
+    "Cloudy": "Mild weather. Consider carrying an umbrella just in case.",
+    "Overcast": "Cool and cloudy. Dress warmly and carry an umbrella.",
+    "Light Rain": "Bring a raincoat and umbrella. Roads might be slippery.",
+    "Rainy": "Heavy rain expected. Stay indoors if possible. Carry an umbrella if you need to go out.",
+    "Stormy": "Severe weather conditions. Avoid going out if possible.",
+    "Severe Storm": "Extreme weather alert. Stay indoors and stay safe.",
+  };
+
+  // Updated disaster data based on safety rating
+  const disasterData = {
+    "Very High": "No Disaster Risk",
+    "High": "No Disaster Risk",
+    "Moderately High": "Minor Disaster Risk",
+    "Moderate": "Minor Disaster Risk",
+    "Moderately Low": "Minor Disaster Risk",
+    "Low": "Moderate Disaster Risk",
+    "Very Low": "Moderate Disaster Risk",
+    "Extremely Low": "Moderate Disaster Risk",
+  };
+
+  // Disaster types corresponding to each risk level
+  const disasterRecommendations = {
+    "No Disaster Risk": "No significant natural disasters expected.",
+    "Minor Disaster Risk": "Possible minor floods or minor weather-related events.",
+    "Moderate Disaster Risk": "Risk of floods or moderate weather-related events.",
+    "High Disaster Risk": "High risk of significant earthquakes, or severe weather events.",
+  };
+
+  // Updated disaster recommendations based on risk
+  // const disasterRecommendations = {
+  //   "No Disaster Risk": "No special precautions needed for natural disasters.",
+  //   "Minor Disaster Risk": "Be aware of potential minor natural disasters. Have basic emergency supplies.",
+  //   "Moderate Disaster Risk": "Prepare for possible natural disasters. Keep emergency supplies and a plan in place.",
+  //   "High Disaster Risk": "Be highly prepared. Implement all recommended safety measures and stay updated on disaster alerts.",
+  // };
+
   // Function to handle search and fetch safety data
   const handleSearch = async () => {
     if (searchTerm.trim() === "") {
@@ -56,12 +108,20 @@ function SafetyRating() {
           const rating = determineSafetyRating(locationData.crimes);
           const summary = `This location has a ${rating} safety rating based on historical data and user reviews.`;
           const tips = getSafetyTips(rating);
+          const weather = weatherData[rating];
+          const weatherRecommendation = weatherRecommendations[weather];
+          const disasterRisk = disasterData[rating];
+          const disasterRecommendation = disasterRecommendations[disasterRisk];
 
           setSafetyData({
             district: locationData.district,
             rating,
             summary,
             tips,
+            weather,
+            weatherRecommendation,
+            disasterRisk,
+            disasterRecommendation,
           });
         } else {
           toast({
@@ -120,7 +180,6 @@ function SafetyRating() {
         return "Safety rating not recognized. Follow standard safety precautions.";
     }
   };
-  
 
   return (
     <Box bg="white" p="20px" mt="40px" borderRadius="8px" marginBottom="0px">
@@ -171,6 +230,13 @@ function SafetyRating() {
             <Text fontWeight="500" fontSize="md" color="teal.500">
               Safety Rating: {safetyData.rating}
             </Text>
+            <Text fontWeight="600" fontSize="lg" mt="10px">
+              Weather: {safetyData.weather}
+            </Text>
+           
+            <Text fontWeight="600" fontSize="lg" mt="10px">
+              Disaster Risk: {safetyData.disasterRisk} 
+            </Text>
             <Text fontSize="md" mt="10px">
               {safetyData.summary}
             </Text>
@@ -187,6 +253,12 @@ function SafetyRating() {
             </Text>
             <Text fontSize="md" mt="10px">
               {safetyData.tips}
+            </Text>
+            <Text fontSize="md" mt="10px">
+              Weather Recommendation: {safetyData.weatherRecommendation}
+            </Text>
+            <Text fontSize="md" mt="10px">
+              Disaster Recommendation: {safetyData.disasterRecommendation}
             </Text>
             <Button
               mt="40px"
