@@ -26,9 +26,9 @@ function TravelBuddyMatching() {
     const exampleProfiles = [
       {
         id: 1,
-        name: "Rahul",
+        name: "John",
         avatar: "https://example.com/avatar1.jpg",
-        destination: "Mumbai",
+        destination: "Goa",
         dates: "2024-09-15 to 2024-09-20",
         interests: "Sightseeing, Museums,Food",
         budget: "₹60,000", // Adjusted to ₹60,000
@@ -44,9 +44,9 @@ function TravelBuddyMatching() {
       },
       {
         id: 3,
-        name: "Alex Brown",
+        name: "Alex",
         avatar: "https://example.com/avatar3.jpg",
-        destination: "Bengaluru",
+        destination: "Goa",
         dates: "2024-11-01 to 2024-11-10",
         interests: "Tech, Sightseeing",
         budget: "₹60,000",
@@ -80,9 +80,9 @@ function TravelBuddyMatching() {
       },
       {
         id: 7,
-        name: "David Wilson",
+        name: "Sunil",
         avatar: "https://example.com/avatar7.jpg",
-        destination: "Jaipur",
+        destination: "Goa",
         dates: "2024-09-20 to 2024-09-30",
         interests: "Historical Sites, Culture",
         budget: "₹20,000",

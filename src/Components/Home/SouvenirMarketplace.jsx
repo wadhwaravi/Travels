@@ -198,7 +198,7 @@ const SouvenirMarketplace = () => {
                   {product.name}
                 </Text>
                 <Flex align="center" mb="10px">
-                  <Icon as={StarIcon} color="yellow.400" />
+                  <Icon as={StarIcon} color="green.400" />
                   <Text ml="2" fontSize="sm" color="gray.600">
                     {product.rating} / 5
                   </Text>
