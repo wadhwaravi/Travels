@@ -18,6 +18,7 @@ function TravelBuddyMatching() {
     destination: "",
     interest: "",
     budget: "",
+    preference: "",
   });
   const toast = useToast();
 
@@ -26,27 +27,29 @@ function TravelBuddyMatching() {
     const exampleProfiles = [
       {
         id: 1,
-        name: "Rahul",
+        name: "John",
         avatar: "https://example.com/avatar1.jpg",
-        destination: "Mumbai",
+        destination: "Goa",
         dates: "2024-09-15 to 2024-09-20",
         interests: "Sightseeing, Museums,Food",
-        budget: "₹60,000", // Adjusted to ₹60,000
+        budget: "₹60,000",
+        preference: "male" 
       },
       {
         id: 2,
-        name: "Jane Smith",
+        name: "Jane",
         avatar: "https://example.com/avatar2.jpg",
         destination: "Delhi",
         dates: "2024-10-05 to 2024-10-10",
         interests: "Food, Culture",
         budget: "₹40,000",
+        preference: "female"
       },
       {
         id: 3,
-        name: "Alex Brown",
+        name: "Alex",
         avatar: "https://example.com/avatar3.jpg",
-        destination: "Bengaluru",
+        destination: "Goa",
         dates: "2024-11-01 to 2024-11-10",
         interests: "Tech, Sightseeing",
         budget: "₹60,000",
@@ -80,9 +83,9 @@ function TravelBuddyMatching() {
       },
       {
         id: 7,
-        name: "David Wilson",
+        name: "Sunil",
         avatar: "https://example.com/avatar7.jpg",
-        destination: "Jaipur",
+        destination: "Goa",
         dates: "2024-09-20 to 2024-09-30",
         interests: "Historical Sites, Culture",
         budget: "₹20,000",
@@ -233,12 +236,13 @@ function TravelBuddyMatching() {
       },
       {
         id: 24,
-        name: "Grace Lopez",
+        name: "Sameer",
         avatar: "https://example.com/avatar24.jpg",
         destination: "Delhi",
         dates: "2024-10-05 to 2024-10-15",
         interests: "Food, Shopping",
         budget: "₹40,000",
+        preference: "male"
       },
       {
         id: 25,
@@ -313,8 +317,10 @@ function TravelBuddyMatching() {
           .includes(filters.interest.toLowerCase());
       const budgetMatch =
         filters.budget === "" || profile.budget === filters.budget;
+      const preferenceMatch = 
+        filters.preference === "" || profile.preference === filters.preference;
 
-      return destinationMatch && interestMatch && budgetMatch;
+      return destinationMatch && interestMatch && budgetMatch && preferenceMatch;
     });
 
     if (filteredMatches.length === 0) {
@@ -352,7 +358,7 @@ function TravelBuddyMatching() {
 
       {/* Filter Options */}
       <Box mb="20px">
-        <Grid templateColumns="repeat(3, 1fr)" gap={6}>
+        <Grid templateColumns="repeat(4, 1fr)" gap={6}>
           <Input
             placeholder="Destination"
             value={filters.destination}
@@ -380,6 +386,15 @@ function TravelBuddyMatching() {
             <option value="₹20,000">₹20,000</option>
             <option value="₹40,000">₹40,000</option>
             <option value="₹60,000">₹60,000</option>
+          </Select>
+          <Select
+            placeholder="Travel Buddy Preference"
+            value={filters.preference}
+            onChange={(e) => setFilters({ ...filters, preference: e.target.value })}
+          >
+            <option value="male">Male Buddy</option>
+            <option value="female">Female Buddy</option>
+            <option value="any">Any</option>
           </Select>
         </Grid>
         <Button

@@ -8,7 +8,7 @@ const List = ({ places = [], childClicked, setType, setRating, type, rating }) =
             <Text fontSize="2xl" fontWeight="bold" mb={8}>
                 Restaurant, Hotel & Attraction Around You
             </Text>
-            
+
             {/* Type Filter */}
             <FormControl mb={8}>
                 <Text mb={2}>Type</Text>
@@ -52,7 +52,6 @@ const List = ({ places = [], childClicked, setType, setRating, type, rating }) =
                         key={i}
                         place={place}
                         selected={Number(childClicked) === i}
-                        // Ensure PlaceDetails component has the `selected` prop if required
                     />
                 ))}
             </SimpleGrid>
